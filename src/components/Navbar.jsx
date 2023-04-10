@@ -16,7 +16,7 @@ const Navbar = () => {
             </ul>
 
             {/* <!-- Hamburger Menu --> */}
-            <button className="flex flex-col justify-between gap-[0.2rem] cursor-pointer md-hidden" id="hamburger-menu" onClick={() => setShowMobile(true)}>
+            <button className="flex flex-col justify-between gap-[0.2rem] cursor-pointer md:hidden" id="hamburger-menu" onClick={() => setShowMobile(true)}>
                 <div className="bar-1 w-5 h-[2px] bg-black"></div>
                 <div className="bar-2 w-5 h-[2px] bg-black"></div>
                 <div className="bar-3 w-5 h-[2px] bg-black"></div>
