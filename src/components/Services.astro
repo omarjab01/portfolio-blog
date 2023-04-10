@@ -1,0 +1,43 @@
+---
+import ServiceCard from "./ServiceCard.astro";
+
+---
+
+<div>
+    <p class="text-center mb-4 mt-8 font-semibold">Servizi che offro</p>
+    <div class="grid grid-cols-1 gap-4 p-6">
+        <ServiceCard 
+            bg_card_class="blue"
+            bg_icona="#EBFBFF"
+            classe_icona="wp_bg"
+            icona_svg="wp_logo"
+            titolo="Wordpress"
+            descrizione="Creazione di un tema personalizzato per il tuo sito wordpress"
+        />
+        <ServiceCard 
+            bg_card_class="green"
+            bg_icona="#EBFFF3"
+            classe_icona="seo_bg p-3"
+            icona_svg="seo"
+            titolo="SEO"
+            descrizione="Ottimizzazione SEO del sito a tal punto da migliorarne il ranking su google"
+        />
+        <ServiceCard 
+            bg_card_class="purple"
+            bg_icona="#EEEBFF"
+            classe_icona="webdesign_bg p-2"
+            icona_svg="design"
+            titolo="Web Design"
+            descrizione="Progettazione di un sito nuovo o già esistente"
+        />
+        <ServiceCard 
+            bg_card_class="light-blue"
+            bg_icona="#EEEBFF"
+            classe_icona="webdesign_bg p-2"
+            icona_svg="react"
+            titolo="Web Development"
+            descrizione="Creazione siti o web app diversi da wordpress"
+        />
+    </div>
+</div>
+

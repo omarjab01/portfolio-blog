@@ -1,0 +1,53 @@
+---
+
+---
+
+<!-- Nome
+descrizione
+path img-container
+alt 
+titolo
+bg-icona 
+bg-card
+classe drop shadow -->
+
+<div class={`p-4 flex flex-col gap-3 ${Astro.props.bg_card_class} rounded-xl`}>
+  <div class={`bg-[${Astro.props.bg_icona}] w-fit rounded-full ${Astro.props.classe_icona}`}>
+      <img src={`/${Astro.props.icona_svg}.svg`} alt={`${Astro.props.titolo} Logo`} title={`${Astro.props.titolo} Logo`}/>
+  </div>
+  <h4 class="text-xl font-semibold">{Astro.props.titolo}</h4>
+  <p>{Astro.props.descrizione}</p>
+</div>
+
+
+<style>
+
+  .blue{
+    background-color: #EFF9FF;
+  }
+  .green{
+    background-color: #EFFFEF;
+  }
+  .purple{
+    background-color: #F2EFFF;
+  }
+  .light-blue{
+    background-color: #EFFBFF;
+  }
+
+  .wp_bg{
+      box-shadow: 0px 4px 19px -1px rgba(89, 178, 227, 0.33);
+  }
+
+  .seo_bg{
+    box-shadow: 0px 4px 19px -1px rgba(133, 227, 89, 0.33);
+  }
+
+  .webdesign_bg{
+    box-shadow: 0px 4px 19px -1px rgba(100, 89, 227, 0.33);
+  }
+
+  .webdev_bg{
+    box-shadow: 0px 4px 19px -1px rgba(89, 178, 227, 0.33);
+  }
+</style>
