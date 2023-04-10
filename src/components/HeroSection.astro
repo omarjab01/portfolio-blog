@@ -1,0 +1,42 @@
+---
+
+---
+
+<div class="flex flex-col h-[90vh]">
+    <div class="flex flex-col gap-4 items-center mt-16 mt-24">
+        <h1 class="text-3xl font-semibold text-center">Progettazione e creazione di siti web moderni e veloci</h1>
+        <h2 class="text-center">Realizzo sia siti wordpress che siti web con framework più recenti quali next js ed astro, specialmente quest’ultimo.</h2>
+        <div class="flex flex-col gap-4 mt-4">
+            <button class="bg-slate-950 text-white p-4 rounded-xl w-fit">Parlami del tuo progetto</button>
+            <button>Segui il mio blog</button>
+        </div>
+    </div>
+    <div class="w-full">
+        <div>
+        <!-- <img src="/mockup_phone.png" class="overflow-hidden hero_image"/> -->
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .hero-image{
+        position: relative;
+    }
+
+    .hero-image::before{
+        position: absolute;
+        content: '';
+        background: url('/bg_blur.png');
+        width: 400px;
+        height: 400px;
+        background-color: rgb(158, 60, 60);
+    }
+
+    .w-full div{
+        background-image: url('public/mockup_phone.png');
+        background-color: red;
+        /* width: fit-content;
+        height: fit-content; */
+    }
+</style>
