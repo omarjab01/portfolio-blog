@@ -7,7 +7,7 @@ const MobileMenu = ({ hideMobile }) => {
                 <a href="/" className="text-black font-semibold text-lg">omar</a>
                 <button onClick={() => hideMobile(false)} className='text-2xl font-semibold'>&times;</button>
             </div>
-            <ul class="flex flex-col gap-6 justify-center items-center mt-52">
+            <ul className="flex flex-col gap-6 justify-center items-center mt-52">
                 <li><a href="/services" className='text-2xl font-semibold'>Servizi</a></li>
                 <li><a href="/blog" className='text-2xl font-semibold'>Blog</a></li>
                 <li><a href="/projects" className='text-2xl font-semibold'>Progetti</a></li>

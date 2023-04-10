@@ -1,0 +1,50 @@
+---
+import { slugify, formatBlogPosts } from '../../js/utils';
+import MainLayout from '../../layout/MainLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+
+export async function getStaticPaths(){
+    return [
+        {
+            params: {category: slugify('Web Development')},
+            props: {name: 'Web Development'}
+        },
+        {
+            params: {category: slugify('Web Design')},
+            props: {name: 'Web Design'}
+        },
+        {
+            params: {category: slugify('Productity')},
+            props: {name: 'Productivity'}
+        }
+    ]
+}
+
+const {category} = Astro.params;
+const {name} = Astro.props;
+
+const allPosts = await Astro.glob('../blog/*.md');
+const formattedPosts = formatBlogPosts(allPosts);
+
+const posts = formattedPosts.filter(post => slugify(post.frontmatter.category) === category)
+
+---
+
+<MainLayout title={name}>
+    <div class="container mx-auto p-6 max-w-7xl">
+        <span>Articoli su {name}</span>
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="col-span-2 md:w-2/3 lg:w-3/4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {
+                        posts.map((post) => <PostCard post={post}/>)
+                    }
+                </div>
+            </div>
+            <!-- Sidebar -->
+            <div class="md: lg:w-1/4">
+                ciao
+            </div>
+        </div>
+    </div>
+</MainLayout>

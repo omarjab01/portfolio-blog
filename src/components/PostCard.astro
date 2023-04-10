@@ -1,0 +1,21 @@
+---
+import {Image} from '@astrojs/image/components';
+import { formatDate, slugify } from '../js/utils';
+const { frontmatter : {title, description, image, author, date, category}, url } = Astro.props.post
+---
+
+
+<article>
+    <a href={url}>
+        <Image src={image.src} alt="" width={1280} height={720}  format="avif" class="rounded-lg"/>
+    </a>
+    <div>
+        <h3 class="text-2xl font-medium my-1">
+            <a href={url}>{title}</a>
+        </h3>
+        <div class="mb-3">
+            <span>{author}</span> - <span>{formatDate(date)}</span>
+        </div>
+        <a href={`/category/${slugify(category)}`} class="bg-blue-200 w-fit text-blue-500 px-2 py-1 font-semibold rounded-md">{category}</a>
+    </div>
+</article>

@@ -1,10 +1,26 @@
 ---
+import PostCard from "../../components/PostCard.astro";
 import MainLayout from "../../layout/MainLayout.astro";
-
+const posts = await Astro.glob('./*md');
+// console.log(posts)
 ---
 
 
 <MainLayout>
-    <span>Blog Page</span>
-    <a href="./post-1/">Post 1</a>
+    <div class="container mx-auto p-6 max-w-7xl">
+        <span>Blog Page</span>
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="col-span-2 md:w-2/3 lg:w-3/4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {
+                        posts.map((post) => <PostCard post={post}/>)
+                    }
+                </div>
+            </div>
+            <!-- Sidebar -->
+            <div class="md: lg:w-1/4">
+                ciao
+            </div>
+        </div>
+    </div>
 </MainLayout>

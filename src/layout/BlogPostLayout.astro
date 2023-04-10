@@ -1,20 +1,37 @@
 ---
+import BlogPostHeader from '../components/BlogPostHeader.astro';
 import '../styles/global.css';
-import {Image, Picture} from '@astrojs/image/components';
 import MainLayout from "./MainLayout.astro";
+// import {Image, Picture} from '@astrojs/image/components';
+
+// import { formatDate } from '../js/utils';}
+
+
 const {frontmatter: {title, description, date, category, author, image}} = Astro.props;
 
 ---
 
-<MainLayout title={title}>
-    <!-- <h2 class="text-red-500">{title}</h2> -->
-    <header>
-        <div class="container">
-            <Image src={image.src} alt="" width="1200" height="600" format="avif" />
+<MainLayout title={title} >
+    <div class="container mx-auto p-6 max-w-2xl">
+        <BlogPostHeader 
+            title = {title}
+            category = {category}
+            image = {image}
+            date = {date}
+            description = {description}
+            author = {author}
+        />
+        <div class="post-content">
+            <div class="content"><slot /></div>
+            <div class="sidebar"></div>
         </div>
-    </header>
-    <div class="post-content">
-        <div class="content"><slot /></div>
-        <div class="sidebar"></div>
     </div>
 </MainLayout>
+
+
+<style>
+    h1{
+        font-size: 1.5rem;
+        color: red;
+    }
+</style>
