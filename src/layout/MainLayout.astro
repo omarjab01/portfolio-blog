@@ -1,5 +1,5 @@
 ---
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar.astro";
 import '../styles/global.css';
 ---
 
@@ -15,7 +15,7 @@ import '../styles/global.css';
   <body>
     <div class="">
         <!-- <Navbar /> -->
-        <Navbar client:visible/>
+        <Navbar />
         <slot />
     </div>
   </body>

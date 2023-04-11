@@ -1,0 +1,61 @@
+---
+---
+
+<header class="flex flex-row items-center w-full justify-between container mx-auto p-6 max-w-7xl">
+    <a href="/" class="text-black font-semibold text-lg">omar</a>
+    <div class="hamburger md:hidden flex flex-col gap-1 cursor-pointer">
+        <div class="line1 w-7 h-[2px] bg-black"></div>
+        <div class="line2 w-7 h-[2px] bg-black"></div>
+        <div class="line3 w-7 h-[2px] bg-black"></div>
+    </div>
+    <nav>
+        <a href="/services" class="hover:scale-105 hover:font-semibold ease-in-out duration-100">Servizi</a>
+        <a href="/blog" class="hover:scale-105 hover:font-semibold ease-in-out duration-100">Blog</a>
+        <a href="/projects" class="hover:scale-105 hover:font-semibold ease-in-out duration-100">Progetti</a>
+        <a href="/about" class="hover:scale-105 hover:font-semibold ease-in-out duration-100">Chi Sono</a>
+    </nav>
+</header>
+
+
+
+<style>
+
+    nav{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 768px) {
+        nav {
+            position: absolute;
+            top: 5rem;
+            left: 0;
+            background-color: rgb(255, 255, 255);
+            width: 100vw;
+            height: 0;
+            flex-direction: column;
+            transition: 0.3s ease-in-out;
+            z-index: 999;
+            overflow: hidden;
+            border-bottom: 1px solid gray;
+        }
+        nav.active{
+            height: 350px;
+            padding-top: 3rem;
+        }
+        nav.active a{
+            opacity: 1;
+        }
+    }
+
+</style>
+
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('nav');
+    hamburger.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    })
+</script>
